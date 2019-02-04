@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="jumbotron py-3">
+        <p class="display-4 mb-0 text-center">
+            Dynamic TextBoxes
+        </p>
+    </div>
+
+    <div class="input-group mb-1" *ngFor="let textBox of textBoxes;let i=index">
+        <input type="text" class="form-control">
+        <div class="input-group-append" >
+            <button class="btn btn-primary" (click)="addTextBox()" *ngIf="i == textBoxes.length-1">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button class="btn btn-danger" (click)="deleteTextBox(i)" *ngIf="i != textBoxes.length-1">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+</div>
